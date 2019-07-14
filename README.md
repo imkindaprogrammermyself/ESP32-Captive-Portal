@@ -1,2 +1,2 @@
 # ESP32-Captive-Portal
-Converts your ESP32 into a captive portal
+Converts your ESP32 into a captive portal. Uses [ESPAsyncWebServer] library.
