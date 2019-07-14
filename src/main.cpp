@@ -20,8 +20,8 @@ public:
   }
 
   void handleRequest(AsyncWebServerRequest *request) {
-    if(request->url() == "/rick.mp3") {
-      request->send(SPIFFS, "/rick.mp3", "audio/mpeg");
+    if(request->url() == "/rick.ogg") {
+      request->send(SPIFFS, "/rick.ogg", "audio/ogg");
     }
     else if(request->url() == "/giphy.webp") {
        request->send(SPIFFS, "/giphy.webp", "image/webp");
