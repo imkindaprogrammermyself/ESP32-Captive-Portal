@@ -22,7 +22,24 @@ public:
   }
   void handleRequest(AsyncWebServerRequest *request)
   {
-    request->send(SPIFFS, "/index.html", "text/html");
+        if(request->url() == "/rick.ogg") {
+      request->send(SPIFFS, "/rick.ogg", "audio/ogg");
+    }
+    else if(request->url() == "/giphy.webp") {
+       request->send(SPIFFS, "/giphy.webp", "image/webp");
+    }
+    else if(request->url() == "/bootstrap.min.css") {
+       request->send(SPIFFS, "/bootstrap.min.css", "text/css");
+    }
+    else if(request->url() == "/scrolling-nav.css") {
+       request->send(SPIFFS, "/scrolling-nav.css", "text/css");
+    }
+    else if(request->url() == "/logo-ironwifi.png") {
+       request->send(SPIFFS, "/logo-ironwifi.png", "image/png");
+    }
+    else {
+      request->send(SPIFFS, "/index.html", "text/html");
+    }
   }
 };
 
