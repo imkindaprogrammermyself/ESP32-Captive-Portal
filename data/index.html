@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #myVideo {
+            display: none;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        #myBtn {
+            position: absolute;
+            top: 45%;
+            left: 40%;
+            width: 300px;
+            font-size: 26px;
+            padding: 10px;
+            border: none;
+            background: #FFF;
+            color: #000;
+            cursor: pointer;
+        }
+
+        #myBtn:hover {
+            background: #ddd;
+            color: black;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        #bg {
+            /* The image used */
+            background-color: #000;
+
+            /* Full height */
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg"></div>
+    <video autoplay loop width="320" height="240" id="myVideo">
+        <source src="rick.mp3" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <button id="myBtn" onclick="myFunction()">CLICK TO START BROWSING</button>
+    </div>
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        var bg = document.getElementById("bg");
+        function myFunction() {
+            if (video.paused) {
+                video.play();
+                 bg.style.backgroundImage = "url('giphy.webp')";
+                btn.remove();
+            } else {
+                video.pause();
+                btn.innerHTML = "LOGIN";
+            }
+        }
+    </script>
+</body>
+
+</html>
