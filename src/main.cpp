@@ -34,9 +34,6 @@ public:
     else if(request->url() == "/logo-ironwifi.png") {
        request->send(SPIFFS, "/logo-ironwifi.png", "image/png");
     }
-    else if(request->url() == "/"){
-      request->send(SPIFFS, "/index.html", "text/html");
-    }
     else {
       request->send(SPIFFS, "/index.html", "text/html");
     }
