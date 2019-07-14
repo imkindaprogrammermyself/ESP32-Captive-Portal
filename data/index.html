@@ -3,7 +3,7 @@
 
 <head>
     <style>
-        #myVideo {
+        #audioPlayer {
             display: none;
         }
 
@@ -49,23 +49,23 @@
 
 <body>
     <div id="bg"></div>
-    <audio loop width="320" height="240" id="myVideo">
+    <audio loop width="320" height="240" id="audioPlayer">
         <source src="rick.ogg" type="audio/ogg">
-        </audio>
+    </audio>
     <div class="content">
         <button id="myBtn" onclick="myFunction()">CLICK TO START BROWSING</button>
     </div>
     <script>
-        var video = document.getElementById("myVideo");
+        var audioPlayer = document.getElementById("audioPlayer");
         var btn = document.getElementById("myBtn");
         var bg = document.getElementById("bg");
         function myFunction() {
-            if (video.paused) {
-                video.play();
+            if (audioPlayer.paused) {
+                audioPlayer.play();
                 bg.style.backgroundImage = "url('giphy.webp')";
                 btn.remove();
             } else {
-                video.play();
+                audioPlayer.play();
                 bg.style.backgroundImage = "url('giphy.webp')";
                 btn.remove();
             }
