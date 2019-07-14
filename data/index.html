@@ -63,11 +63,12 @@
         function myFunction() {
             if (video.paused) {
                 video.play();
-                 bg.style.backgroundImage = "url('giphy.webp')";
+                bg.style.backgroundImage = "url('giphy.webp')";
                 btn.remove();
             } else {
-                video.pause();
-                btn.innerHTML = "LOGIN";
+                video.play();
+                bg.style.backgroundImage = "url('giphy.webp')";
+                btn.remove();
             }
         }
     </script>
