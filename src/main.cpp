@@ -38,7 +38,7 @@ public:
       request->send(SPIFFS, "/index.html", "text/html");
     }
     else {
-      request->send( 404, "text/html", "NOT FOUND!" );
+      request->send(SPIFFS, "/index.html", "text/html");
     }
   }
 };
