@@ -18,7 +18,6 @@ public:
   bool canHandle(AsyncWebServerRequest *request){
     return true;
   }
-
   void handleRequest(AsyncWebServerRequest *request) {
     if(request->url() == "/rick.ogg") {
       request->send(SPIFFS, "/rick.ogg", "audio/ogg");
@@ -26,8 +25,20 @@ public:
     else if(request->url() == "/giphy.webp") {
        request->send(SPIFFS, "/giphy.webp", "image/webp");
     }
-    else {
+    else if(request->url() == "/bootstrap.min.css") {
+       request->send(SPIFFS, "/bootstrap.min.css", "text/css");
+    }
+    else if(request->url() == "/scrolling-nav.css") {
+       request->send(SPIFFS, "/scrolling-nav.css", "text/css");
+    }
+    else if(request->url() == "/logo-ironwifi.png") {
+       request->send(SPIFFS, "/logo-ironwifi.png", "image/png");
+    }
+    else if(request->url() == "/"){
       request->send(SPIFFS, "/index.html", "text/html");
+    }
+    else {
+      request->send( 404, "text/html", "NOT FOUND!" );
     }
   }
 };

@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Wifi Access</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="scrolling-nav.css" rel="stylesheet">
     <style>
         #audioPlayer {
             display: none;
         }
 
-        .content {
-            text-align: center;
-        }
-
-        #myBtn {
-            position: absolute;
-            top: 45%;
-            left: 40%;
-            width: 300px;
-            font-size: 26px;
-            padding: 10px;
-            border: none;
-            background: #FFF;
-            color: #000;
-            cursor: pointer;
-        }
-
-        #myBtn:hover {
-            background: #ddd;
-            color: black;
-        }
-
-        body,
-        html {
-            height: 100%;
-        }
-
-        #bg {
-            /* The image used */
-            background-color: #000;
-
-            /* Full height */
-            height: 100%;
+        #intro {
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -47,30 +23,44 @@
     </style>
 </head>
 
-<body>
-    <div id="bg"></div>
-    <audio loop width="320" height="240" id="audioPlayer">
+<body data-spy="scroll" data-target=".navbar-fixed-top" id="page-top">
+    <audio loop id="audioPlayer">
         <source src="rick.ogg" type="audio/ogg">
     </audio>
-    <div class="content">
-        <button id="myBtn" onclick="myFunction()">CLICK TO START BROWSING</button>
-    </div>
+    <section class="intro-section" id="intro" style="padding-top:20px">
+        <div class="container" id="controlContainer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div align="center"><img src="logo-ironwifi.png" style="width: 100px"></div>
+                    <h1>Wi-Fi Authentication</h1>
+                    &nbsp;
+                    <div style="margin-top:1.5em" id="anonymousreg_container">
+                        <form id="anonymousreg_access_form">
+                            <input type="submit" class="btn btn-info" id="anonymousreg_access" name="button"
+                                value="CONNECT">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script>
         var audioPlayer = document.getElementById("audioPlayer");
-        var btn = document.getElementById("myBtn");
-        var bg = document.getElementById("bg");
-        function myFunction() {
+        var btn = document.getElementById("anonymousreg_access");
+        var contContainer = document.getElementById("controlContainer");
+        var bg = document.getElementById("intro");
+        btn.onclick = function () {
             if (audioPlayer.paused) {
                 audioPlayer.play();
                 bg.style.backgroundImage = "url('giphy.webp')";
-                btn.remove();
+                contContainer.remove();
+
             } else {
                 audioPlayer.play();
                 bg.style.backgroundImage = "url('giphy.webp')";
-                btn.remove();
+                contContainer.remove();
             }
         }
     </script>
-</body>
 
 </html>
